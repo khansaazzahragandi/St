@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="coba.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="border border-success p-2 mb-2 bg-primary text-bg-primary" style="font-size: 20px;">Starbhak Mart</div>
+    <div class="container-fluid">
+        <div class="row bg-body-tertiary" style="height: 600px;">
+            <div id="content" class="col-3" style="margin-left: 10px;">
+                <div class="row">
+                    <select class="bg-info" style="width: 99%; height: 40px; margin-left: 3px; margin-top: 3px; font-size: 18px; color: white;">
+                        <option class="" style="text-align: center; ">Take Away</option>
+                        <option class="" style="text-align: center; ">Dine In</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <div class="border border-secondary bg-info" style="width: 99%; height: 38px; margin-left: 3px; margin-top: 10px;">
+                        <h5 class="text-center" style="color: white; font-size: 20px; margin-top: 1px;">
+                            <img src="assets/user.png" alt="" style="width: 31px; height: 31px; margin-right: 12px; margin-top: 1px;">Fast FoodSa
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="border border-secondary "style="margin-top: 8px; height: 25pc; margin-right: 9pc; overflow: scroll;">
+                        <div class="tampilan">     
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="border border-white bg-white" style="margin-top: 8px; height: 5pc; ">
+                        <div class="col-12">
+                            <div class="garis" >
+                                <h6 style="display: flex;">Discount: </h6>
+                            </div>
+                            <div class="row col-12">
+                                <div class="garis">
+                                    <h6>tax:</h6>
+                                    <h6 style="margin-left: 18pc; margin-top: -27px;" id="pajak">Rp. 0</h6>
+                                </div>
+                            </div>
+                            <div class="row col-12" style="width: 26.2pc; background-color: #39A7FF; color: white; height: 25px;">
+                                <div class="garis">
+                                    <h6>Total Amount: </h6>
+                                    <h6 id="total" style="margin-left: 18pc; margin-top: -27px;">Rp. 0</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" style="width: 700pc; margin-top: 1px;">
+                <nav class="navbar bg-secondary-subtle">
+                    <h6 style="height: 10px; margin-left: 10px;">item list</h6>
+                    <div class="box">
+                        <img src="assets/search.png" alt="" style="height: 35px; margin-right: 20px;">
+                        <img src="assets/titik.png" alt="" style="height: 35px; margin-right: 20px;">
+                        <img src="assets/sort-alt.png" alt="" style="height: 35px;">
+                    </div>
+                </nav>
+                
+                <div style="width: 100%; height: 60%; margin-top: 5px; border: 2px solid black; overflow: scroll;">
+                    <div class="row col-sm-12 col-md-10 col-lg-9" style="width: 100%;">
+                        <div class="col-2" style="width: 8pc; margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Cheesecake', 1, 18000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/cheesecake.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Cheesecake</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 18.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Coffe Latte', 1, 13000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/coffe latte.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Coffe Latte</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 13.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Garlic Steak', 1, 42000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/garlic steak.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Garlic Steak</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 42.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Lemon Tea', 1, 12000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/ice lemon masala.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Lemon Tea</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 12.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Churros', 1, 12000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/churros.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Churros</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 10.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Espresso Orange', 1, 16000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/espresso orange.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Espresso Orange</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 16.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Pepperoni Pizza', 1, 45000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/pepperoni pizza.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Pepperoni Pizza</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 45.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Ocean Latte', 1, 16000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/ocean latte.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Ocean Latte</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 16.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Shirmp Pasta', 1, 26000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/shirmp pasta.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Shirmp Pasta</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 26.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Lassi Sweet', 1, 13000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/lassi sweet.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Lassi Sweet</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 13.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Choco Waffle', 1, 8000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/choco waffle.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Choco Waffle</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 8.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Lime Soda', 1, 12000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/lime soda.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Lime Soda</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 12.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Choco Mousse', 1, 16000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/chocolate mousse.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Choco Mousse</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 16.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Lychee Yakult', 1, 12000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/lychee yakult.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Lychee Yakult</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 12.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Salmon Glaze', 1, 38000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/salmon glaze.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Salmon Glaze</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 38.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Galaxy Lemonade', 1, 19000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/galaxy lemonade.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Galaxy Lemonade</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 19.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Hot Choco', 1, 10000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/hot choco.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Hot Choco</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 10.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Souffle Pancakes', 1, 11000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/souffle pancakes.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Souffle Pancakes</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 11.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('King Burger', 1, 30000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/king burger.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">King Burger</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 30.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Cookies Gelato', 1, 15000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/cookies gelato.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Cookies Gelato</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 15.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Matcha Bubble Tea', 1, 20000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/matcha bubble tea.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Matcha Bubble Tea</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 20.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Strawberry Gelato', 1, 12000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/strawberry gelato.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Strawberry Gelato</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 12.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Korean Chicken', 1, 28000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/korean chicken.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Korean Chicken</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 28.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Peach Tea', 1, 13000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/peach tea.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Peach Tea</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 13.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Cookies', 1, 8000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/cookies.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Cookies</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 8.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Milk Tea Bubble', 1, 12000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/milk tea bubble.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Milk Tea Bubble</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 12.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Sandwich Fruit', 1, 10000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/sandwich fruit.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Sandwich Fruit</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 10.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="width: 8pc;margin-right: 30px;">
+                            <div class="border border-black" style="width: 150px; height: 200px; margin-left: 5px; margin-top: 6px; background-color: white;">
+                                <div class="cards" onclick="tambahpesanan('Onion Ring', 1, 13000 )">
+                                    <div class="in-cards">
+                                        <img src="assets/onion ring.jpeg" class="card-img-top" style="height: 115px; width: 120px; margin-left: 12px; margin-top: 6px;">
+                                        <p style="margin-top: 12px; margin-left: 10px;">Onion Ring</p>
+                                        <h1 style="font-size: 20px; margin-left: 23px; margin-top: -11px; color: #39A7FF;">Rp. 13.000</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                </div>
+            </div>
+        </div>
+        <div class="tombol-submit" style="text-align: right;  margin-top: -300px;">
+            <button onclick="print()" style="width: 15pc; height: 3pc; background-color: #39A7FF;">
+                <p style="margin-top: -10px; margin-left: 27px;">Payment</p>
+                <p style="margin-top: -10px; margin-left: 30px;"><i class='bx bx-printer'></i>(CTRL + P)</p>
+            </button>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="bg-primary text-bg-primary"
+        style=" font-size: 16px; position: fixed; bottom: 0; left: 0;">Ready</div>
+        </footer>
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  
+  function print() {
+      var contentDiv = document.getElementById('content');
+      var contentToPrint = contentDiv.innerHTML;
+      var newWindow = window.open('', '_blank');
+      newWindow.document.open();
+      newWindow.document.write(  contentToPrint  );
+      newWindow.document.close();
+      newWindow.print();
+    }
+    var cart = [];
+    function tambahpesanan(name, count, price) {
+        //mendapatkan array saat ini
+        var existingItem = cart.find(element => element.name === name);
+        //memeriksa array sudah ada atau belum
+        if (!existingItem) {
+            cart.push({ name: name, count: count, price: price });
+        } else {
+            existingItem.count++;
+        }
+        showCartList();
+    }
+
+
+
+    function showCartList() {
+        $(".tampilan").empty();
+        totalHarga = 0 ;
+        cart.forEach(function (item, index) {
+            $(".tampilan").append(`  <div class="card" style="display: flex;">
+
+                <div class="col-12">
+    <div class="row" style="margin-left: 5px;">
+        <div class="bungkus" style="margin-top: 8px; display: flex; justify-content: space-between;">
+            <p style="font-family: 'Barlow Condensed', sans-serif; font-size: 14px; margin: 0; font-weight:400 ; width: 120px">`+ item.name + `</p>
+            <h6
+                style="margin: 0 0 0 20%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  text-align: right; font-weight: bold; ">Rp. `+ item.price +`</h6>
+
+            <div class="col-2">
+                <i class='bx bx-trash' style="cursor: pointer; font-size: 60px; text-align: right;" onclick="Hapus(`+ index + `)"></i>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="bungkus1" style="display: flex; margin-top: -7%; margin-left: 8px;">
+
+            <p style="font-size: 14px;">Unit Price :</p>
+            <h6 style="margin-left: 15px; font-size: 16px;">Rp. `+ item.price + `</h6>
+
+            <p style="margin-left: 15px; font-size: 17px;">Quantity :</p>
+            <h6 style="margin-left: 10%;">`+ item.count + `</h6>
+        </div>
+    </div>
+</div>
+</div>`);
+        })
+        console.log(cart)
+        var tot = 0;
+        var pjkpersentase = 0.1;
+        var totalpajak = 0;
+        for(var i = 0; i < cart.length; i++) {
+            tot = tot + (cart[i].count * cart[i].price)
+        }
+        var Pajak = tot * pjkpersentase;
+        totalpajak += Pajak;
+        var total = Pajak + tot;
+
+        $("#pajak").text("Rp. " + Pajak)
+        $("#total").text("Rp. " + total)
+    }
+    function Hapus(index) {
+        let text;
+        if (confirm (cart.splice(index, 1) && "Anda Yakin Ingin menghapus pesanan?")) {
+            showCartList();
+        } 
+
+    }
+
+    
+
+</script>
+
+
+</html>
+
+                            
